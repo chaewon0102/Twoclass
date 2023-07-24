@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.itwillbs.mappers.memberMapper">
+
+  <select id="userCheck" 
+                  resultType="com.itwillbs.domain.MemberDTO">
+    select * from members 
+    where id = #{id} and pass = #{pass}
+  </select> 
+  
+   <select id="getMember" 
+                  resultType="com.itwillbs.domain.MemberDTO">
+    select * from members 
+    where id = #{id}
+  </select> 
+  
+  <select id="getMemberList" 
+                  resultType="com.itwillbs.domain.MemberDTO">
+    select * from members 
+  </select> 
+  
+  
+<!--   com.itwillbs.mappers.memberMapper.insertMember -->
+<!--   => sql이름 호출해서 사용  
+       => ? 자리 MemberDTO 멤버변수 #{이름}-->
+  <insert id="insertMember">
+  	insert into members(id,pass,name,date) 
+  	values(#{id},#{pass},#{name},#{date})
+  </insert>
+  
+  <update id="updateMember">
+  	update members 
+  	set name = #{name} 
+  	where id = #{id}
+  </update>
+  
+  <delete id="deleteMember">
+  	delete from members 
+  	where id = #{id}
+  </delete>
+  
+</mapper>
