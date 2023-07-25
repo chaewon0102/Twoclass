@@ -43,9 +43,9 @@ public class MemberDAO {
 		return sqlSession.selectOne(namespace+".userCheck", memberDTO);
 	}
 
-	public MemberDTO getMember(String id) {
+	public MemberDTO getMember(String mem_id) {
 		System.out.println("MemberDAO getMember()");
-		return sqlSession.selectOne(namespace+".getMember",id);
+		return sqlSession.selectOne(namespace+".getMember",mem_id);
 	}
 
 	public void updateMember(MemberDTO memberDTO) {

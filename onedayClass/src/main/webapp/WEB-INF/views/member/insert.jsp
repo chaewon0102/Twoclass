@@ -22,13 +22,21 @@ http://localhost:8080/프로젝트명/member/insertPro -->
 <%--프로젝트명  <%=request.getContextPath() %> --%>
 
 <form action="${pageContext.request.contextPath }/member/insertPro" method="post">
-아이디 : <input type="text" name="id" class="id">
-<input type="button" value="아이디중복체크" id="idcheckbtn">
-<br>
+아이디 : <input type="text" name="mem_id" class="mem_id">
+<input type="button" value="아이디중복체크" id="idcheckbtn"><br>
 <div id="idcheckdiv"></div><br>
-비밀번호 : <input type="password" name="pass"><br>
-이름 : <input type="text" name="name"><br>
+비밀번호 : <input type="password" name="mem_pass"><br>
+이름 : <input type="text" name="mem_name"><br>
+전화번호 : <input type= "text" name="mem_phone"><br>
+<input type="radio" name="mem_gender" value="0"> 남자<br>
+<input type="radio" name="mem_gender" value="1"> 여자<br>
+프로필 사진 : <input type="file" name="mem_file"><br>
+주소 : <input type="text" name="mem_add"><br>
+<input type="hidden" name="mem_confirm" value ="y">
+<input type="hidden" name="mem_num" value ="1">
+<p>
 <input type="submit" value="회원가입">
+</p>
 </form>
 
 <script type="text/javascript"
@@ -37,14 +45,14 @@ http://localhost:8080/프로젝트명/member/insertPro -->
  	$(document).ready(function(){
  		$('#idcheckbtn').click(function(){
 //  			alert("클릭");
-			if($('.id').val() == ""){
+			if($('.mem_id').val() == ""){
 				alert("아이디 입력하세요");
-				$('.id').focus();
+				$('.mem_id').focus();
 				return false;
 			}
 			$.ajax({
 				url:'${pageContext.request.contextPath }/member/idCheck',
-				data:{'id':$('.id').val()},
+				data:{'mem_id':$('.mem_id').val()},
 				success:function(result){
 					// id="idcheckdiv" 출력
 					if(result == 'iddup'){

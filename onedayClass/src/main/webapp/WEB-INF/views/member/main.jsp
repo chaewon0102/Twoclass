@@ -21,13 +21,13 @@
 %>
 <!-- http://localhost:8080/myweb/member/main -->
 
-<c:if test="${ empty sessionScope.id }">
+<c:if test="${ empty sessionScope.mem_id }">
 	<c:redirect url="/member/login"></c:redirect>
 </c:if>
 <img 
 src="${pageContext.request.contextPath }/resources/bunny.jpg">
 <br>
-${sessionScope.id }님 로그인 하셨습니다.
+${sessionScope.mem_id }님 로그인 하셨습니다.
 <a href="${pageContext.request.contextPath }/member/logout">로그아웃</a><br>
 <a href="${pageContext.request.contextPath }/member/info">회원정보조회</a><br>
 <a href="${pageContext.request.contextPath }/member/update">회원정보수정</a><br>

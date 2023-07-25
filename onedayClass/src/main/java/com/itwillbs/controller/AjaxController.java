@@ -24,9 +24,9 @@ public class AjaxController {
 	@RequestMapping(value = "/member/idCheck", method = RequestMethod.GET)
 	public ResponseEntity<String> idCheck(HttpServletRequest request) {
 		
-		String id=request.getParameter("id");
+		String mem_id=request.getParameter("mem_id");
 		
-		MemberDTO memberDTO=memberService.getMember(id);
+		MemberDTO memberDTO=memberService.getMember(mem_id);
 		
 		String result="";
 		if(memberDTO != null) {

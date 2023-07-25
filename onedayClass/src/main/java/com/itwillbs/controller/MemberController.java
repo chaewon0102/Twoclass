@@ -1,5 +1,6 @@
 package com.itwillbs.controller;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -57,9 +58,8 @@ public class MemberController {
 //		memberDTO.setId(request.getParameter("id"));
 //		memberDTO.setPass(request.getParameter("pass"));
 //		memberDTO.setName(request.getParameter("name"));
-		System.out.println(memberDTO.getId());
-		System.out.println(memberDTO.getPass());
-		System.out.println(memberDTO.getName());
+		memberDTO.setMem_indate(new Timestamp(System.currentTimeMillis()));
+		System.out.println(memberDTO.toString());
 	    //회원가입 처리작업 
 		//->com.itwillbs.service 패키지  MemberService insertMember()메서드
 		//->com.itwillbs.dao 패키지      MemberDAO insertMember()메서드
@@ -87,7 +87,7 @@ public class MemberController {
 		MemberDTO memberDTO2=memberService.userCheck(memberDTO);
 		if(memberDTO2 !=null) {
 			//아이디 비밀번호 일치 => 세션생성 => /member/main 이동
-			session.setAttribute("id", memberDTO.getId());
+			session.setAttribute("mem_id", memberDTO.getMem_id());
 			return "redirect:/member/main";
 		}else {
 			//아이디 비밀번호 틀림 => member/msg.jsp 이동 
