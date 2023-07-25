@@ -1,15 +1,8 @@
 package com.itwillbs.controller;
 
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
 
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -26,25 +19,6 @@ public class ProductController {
 //	@Inject
 //	private ProduuctService productService;
 	
-	
-	private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
-	
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
-//	@RequestMapping(value = "/", method = RequestMethod.GET)
-//	public String home(Locale locale, Model model) {
-//		logger.info("Welcome home! The client locale is {}.", locale);
-//		
-//		Date date = new Date();
-//		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-//		
-//		String formattedDate = dateFormat.format(date);
-//		
-//		model.addAttribute("serverTime", formattedDate );
-//		
-//		return "home";
-//	}
 	//<<관리자 상품등록, 등록 리스트>> 
 	//상품등록(관리자) 맵핑 productRegistration.jsp
 	@RequestMapping(value = "/product/productRegistration", method = RequestMethod.GET)

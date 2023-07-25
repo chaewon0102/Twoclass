@@ -20,14 +20,14 @@ public class AjaxController {
 	@Inject
 	private MemberService memberService;
 	
-//	http://localhost:8080/myweb/member/idCheck?id=kim
+ //	http://localhost:8080/myweb/member/idCheck?id=kim
 	@RequestMapping(value = "/member/idCheck", method = RequestMethod.GET)
 	public ResponseEntity<String> idCheck(HttpServletRequest request) {
 		
 		String mem_id=request.getParameter("mem_id");
 		
 		MemberDTO memberDTO=memberService.getMember(mem_id);
-		
+		  
 		String result="";
 		if(memberDTO != null) {
 			//아이디 있음 => 아이디 중복
@@ -61,7 +61,7 @@ public class AjaxController {
 		// ResponseEntity 에 출력 결과를 담아서 리턴
 ResponseEntity<List<MemberDTO>> entity =
 new ResponseEntity<List<MemberDTO>>(MemberList,HttpStatus.OK);
-		return entity;
+	     	return entity;
 	}
 	
 }//class
