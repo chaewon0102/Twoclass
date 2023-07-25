@@ -27,10 +27,10 @@
 <!--   => sql이름 호출해서 사용  
        => ? 자리 MemberDTO 멤버변수 #{이름}-->
   <insert id="insertMember">
-  	insert into members(mem_num ,mem_id ,mem_pass ,mem_name ,mem_phone ,mem_gender ,mem_confirm
+  	insert into members(mem_id ,mem_pass ,mem_name ,mem_phone ,mem_gender ,mem_confirm
   						,mem_file ,mem_add, mem_indate) 
   						
-  	values(#{mem_num},#{mem_id},#{mem_pass},#{mem_name},#{mem_phone},
+  	values(#{mem_id},#{mem_pass},#{mem_name},#{mem_phone},
   			#{mem_gender},#{mem_confirm},#{mem_file},#{mem_add},#{mem_indate})
   </insert>
   

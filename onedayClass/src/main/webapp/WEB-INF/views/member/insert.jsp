@@ -33,7 +33,7 @@ http://localhost:8080/프로젝트명/member/insertPro -->
 프로필 사진 : <input type="file" name="mem_file"><br>
 주소 : <input type="text" name="mem_add"><br>
 <input type="hidden" name="mem_confirm" value ="y">
-<input type="hidden" name="mem_num" value ="1">
+
 <p>
 <input type="submit" value="회원가입">
 </p>
