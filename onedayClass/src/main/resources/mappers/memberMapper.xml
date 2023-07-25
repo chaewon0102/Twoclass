@@ -8,13 +8,13 @@
   <select id="userCheck" 
                   resultType="com.itwillbs.domain.MemberDTO">
     select * from members 
-    where id = #{id} and pass = #{pass}
+    where mem_id = #{mem_id} and mem_pass = #{mem_pass}
   </select> 
   
    <select id="getMember" 
                   resultType="com.itwillbs.domain.MemberDTO">
     select * from members 
-    where id = #{id}
+    where mem_id = #{mem_id}
   </select> 
   
   <select id="getMemberList" 
@@ -27,8 +27,11 @@
 <!--   => sql이름 호출해서 사용  
        => ? 자리 MemberDTO 멤버변수 #{이름}-->
   <insert id="insertMember">
-  	insert into members(id,pass,name,date) 
-  	values(#{id},#{pass},#{name},#{date})
+  	insert into members(mem_num ,mem_id ,mem_pass ,mem_name ,mem_phone ,mem_gender ,mem_confirm
+  						,mem_file ,mem_add, mem_indate) 
+  						
+  	values(#{mem_num},#{mem_id},#{mem_pass},#{mem_name},#{mem_phone},
+  			#{mem_gender},#{mem_confirm},#{mem_file},#{mem_add},#{mem_indate})
   </insert>
   
   <update id="updateMember">
