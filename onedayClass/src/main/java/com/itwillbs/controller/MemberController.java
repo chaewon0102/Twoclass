@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.itwillbs.domain.MemberDTO;
 import com.itwillbs.service.MemberService;
 
-
 @Controller
 public class MemberController {
 	// 주소는 get방식

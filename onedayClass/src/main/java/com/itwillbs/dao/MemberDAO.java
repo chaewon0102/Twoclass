@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.itwillbs.domain.MemberDTO;
 
+
 @Repository
 public class MemberDAO {
 	

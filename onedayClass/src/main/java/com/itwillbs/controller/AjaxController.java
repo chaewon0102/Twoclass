@@ -58,7 +58,6 @@ public class AjaxController {
 //			    <version>2.13.3</version>
 //			</dependency>
 
-			
 		// ResponseEntity 에 출력 결과를 담아서 리턴
 ResponseEntity<List<MemberDTO>> entity =
 new ResponseEntity<List<MemberDTO>>(MemberList,HttpStatus.OK);

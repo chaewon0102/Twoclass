@@ -22,7 +22,7 @@
     select * from members 
   </select> 
   
-  
+ 
   
 <!--   com.itwillbs.mappers.memberMapper.insertMember -->
 <!--   => sql이름 호출해서 사용  
