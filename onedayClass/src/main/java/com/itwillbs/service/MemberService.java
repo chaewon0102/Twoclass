@@ -1,7 +1,7 @@
 package com.itwillbs.service;
 
-import java.sql.Timestamp;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -23,41 +23,48 @@ public class MemberService {
 //		this.memberDAO = memberDAO;
 //	}
 
-	public void insertMember(MemberDTO memberDTO) {
+	public void insertMember(Map<String, String> param) {
 		System.out.println("MemberService insertMember()");
 		//날짜 저장
-		memberDTO.setDate(new Timestamp(System.currentTimeMillis()));
 		
 		// insertMember 메서드 호출
-		memberDAO.insertMember(memberDTO);
+		memberDAO.insertMember(param);
 	}
 	
-	public MemberDTO userCheck(MemberDTO memberDTO) {
+	public Map<String, String> userCheck(Map<String, String> param) {
 		System.out.println("MemberService userCheck()");
-		return memberDAO.userCheck(memberDTO);
+		return memberDAO.userCheck(param);
 	}
 	
 //	 MemberDTO memberDTO=memberService.getMember(id);
-	 public MemberDTO getMember(String id) {
+	 public Map<String, String> getMember(String mem_id) {
 		 System.out.println("MemberService getMember()");
-		 return memberDAO.getMember(id);
+		 return memberDAO.getMember(mem_id);
 	}
 
-	public void updateMember(MemberDTO memberDTO) {
+	public void updateMember(Map<String, String> param) {
 		System.out.println("MemberService updateMember()");
 		
-		memberDAO.updateMember(memberDTO);
+		memberDAO.updateMember(param);
 	}
 
-	public void deleteMember(MemberDTO memberDTO) {
+	public void deleteMember(Map<String, String> param) {
 		System.out.println("MemberService deleteMember()");
 		
-		memberDAO.deleteMember(memberDTO);
+		memberDAO.deleteMember(param);
 	}
 
 	public List<MemberDTO> getMemberList() {
 		System.out.println("MemberService getMemberList()");
 		return memberDAO.getMemberList();
 	}
+	
+	public MemberDTO idcheck(MemberDTO memberDTO){  // id찾기 
+ 		System.out.println("아이디찾기 서비스 ");
+		return memberDAO.idcheck(memberDTO);
+	}
+	
+	
+	
 	
 }

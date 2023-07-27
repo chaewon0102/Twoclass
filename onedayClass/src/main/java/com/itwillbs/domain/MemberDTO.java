@@ -16,10 +16,39 @@ public class MemberDTO {
 	private String mem_add;
 	private Timestamp mem_indate;
 	private Timestamp mem_outdate;
+	private String mem_addcode;
+	private String mem_addroad;
+	private String mem_addjibun;
+	private String mem_type;
 	
 	
 	
 	
+	
+	public String getMem_type() {
+		return mem_type;
+	}
+	public void setMem_type(String mem_type) {
+		this.mem_type = mem_type;
+	}
+	public String getMem_addcode() {
+		return mem_addcode;
+	}
+	public void setMem_addcode(String mem_addcode) {
+		this.mem_addcode = mem_addcode;
+	}
+	public String getMem_addroad() {
+		return mem_addroad;
+	}
+	public void setMem_addroad(String mem_addroad) {
+		this.mem_addroad = mem_addroad;
+	}
+	public String getMem_addjibun() {
+		return mem_addjibun;
+	}
+	public void setMem_addjibun(String mem_addjibun) {
+		this.mem_addjibun = mem_addjibun;
+	}
 	public String getMem_num() {
 		return mem_num;
 	}
@@ -86,15 +115,15 @@ public class MemberDTO {
 	public void setMem_outdate(Timestamp mem_outdate) {
 		this.mem_outdate = mem_outdate;
 	}
-	
-	
 	@Override
 	public String toString() {
 		return "MemberDTO [mem_num=" + mem_num + ", mem_id=" + mem_id + ", mem_pass=" + mem_pass + ", mem_name="
 				+ mem_name + ", mem_phone=" + mem_phone + ", mem_gender=" + mem_gender + ", mem_confirm=" + mem_confirm
 				+ ", mem_file=" + mem_file + ", mem_add=" + mem_add + ", mem_indate=" + mem_indate + ", mem_outdate="
-				+ mem_outdate + "]";
+				+ mem_outdate + ", mem_addcode=" + mem_addcode + ", mem_addroad=" + mem_addroad + ", mem_addjibun="
+				+ mem_addjibun + ", mem_type=" + mem_type + "]";
 	}
+	
 	
 	
 	

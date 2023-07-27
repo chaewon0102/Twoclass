@@ -1,6 +1,7 @@
 package com.itwillbs.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -26,10 +27,10 @@ public class AjaxController {
 		
 		String mem_id=request.getParameter("mem_id");
 		
-		MemberDTO memberDTO=memberService.getMember(mem_id);
+		Map<String, String> getMap =memberService.getMember(mem_id);
 		  
 		String result="";
-		if(memberDTO != null) {
+		if(getMap != null) {
 			//아이디 있음 => 아이디 중복
 			result = "iddup";
 		}else {
@@ -42,6 +43,7 @@ public class AjaxController {
 		return entity;
 	}//idCheck()
 	
+	
 //	http://localhost:8080/myweb/member/jsonlist
 	@RequestMapping(value = "/member/jsonlist", method = RequestMethod.GET)
 	public ResponseEntity<List<MemberDTO>> jsonlist(){
@@ -49,7 +51,6 @@ public class AjaxController {
 		//  List<MemberDTO> => json 변경하는 프로그램 설치
 		//  https://mvnrepository.com/ => jackson-databind 검색
 		// pom.xml => jackson-databind  2.13.3
-		
 //		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 //			<dependency>
 //			    <groupId>com.fasterxml.jackson.core</groupId>
@@ -57,7 +58,6 @@ public class AjaxController {
 //			    <version>2.13.3</version>
 //			</dependency>
 
-			
 		// ResponseEntity 에 출력 결과를 담아서 리턴
 ResponseEntity<List<MemberDTO>> entity =
 new ResponseEntity<List<MemberDTO>>(MemberList,HttpStatus.OK);
