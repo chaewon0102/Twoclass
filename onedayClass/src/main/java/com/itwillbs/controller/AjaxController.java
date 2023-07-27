@@ -51,7 +51,6 @@ public class AjaxController {
 		//  List<MemberDTO> => json 변경하는 프로그램 설치
 		//  https://mvnrepository.com/ => jackson-databind 검색
 		// pom.xml => jackson-databind  2.13.3
-		
 //		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 //			<dependency>
 //			    <groupId>com.fasterxml.jackson.core</groupId>

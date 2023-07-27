@@ -5,7 +5,6 @@ import java.util.Map;
 
 import javax.inject.Inject;
 import javax.sql.DataSource;
-
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
