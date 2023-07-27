@@ -1,6 +1,7 @@
 package com.itwillbs.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.sql.DataSource;
@@ -29,40 +30,41 @@ public class MemberDAO {
 //		jdbcTemplate=new SimpleJdbcTemplate(dataSource);
 //	}
 
-//	String insertMember="insert into members(id,pass,name,date) values(?,?,?,?)";
-	public void insertMember(MemberDTO memberDTO) {
-		System.out.println("MemberDAO insertMember()");
+	public void insertMember(Map<String, String> param) {
 //		jdbcTemplate.update(insertMember, memberDTO.getId(),memberDTO.getPass(),memberDTO.getName(),memberDTO.getDate());
-		// MemberDTO 멤버변수 이름, memberMapper.xml #{id} 일치
-		// com.itwillbs.mappers.memberMapper.insertMember
-		sqlSession.insert(namespace+".insertMember", memberDTO);
+		sqlSession.insert(namespace+".insertMember", param);
 	}
 	
-	public MemberDTO userCheck(MemberDTO memberDTO) {
+	public Map<String, String> userCheck(Map<String, String> param) {
 		System.out.println("MemberDAO userCheck()");
-		return sqlSession.selectOne(namespace+".userCheck", memberDTO);
+		return sqlSession.selectOne(namespace+".userCheck", param);
 	}
 
-	public MemberDTO getMember(String mem_id) {
+	public Map<String, String> getMember(String mem_id) {
 		System.out.println("MemberDAO getMember()");
 		return sqlSession.selectOne(namespace+".getMember",mem_id);
 	}
 
-	public void updateMember(MemberDTO memberDTO) {
+	public void updateMember(Map<String, String> param) {
 		System.out.println("MemberDAO updateMember()");
 		
-		sqlSession.update(namespace+".updateMember", memberDTO);
+		sqlSession.update(namespace+".updateMember", param);
 	}
 
-	public void deleteMember(MemberDTO memberDTO) {
+	public void deleteMember(Map<String, String> param) {
 		System.out.println("MemberDAO updateMember()");
 		
-		sqlSession.delete(namespace+".deleteMember", memberDTO);
+		sqlSession.delete(namespace+".deleteMember", param);
 	}
 
 	public List<MemberDTO> getMemberList() {
 		System.out.println("MemberDAO getMemberList()");
-return sqlSession.selectList(namespace+".getMemberList");
+		return sqlSession.selectList(namespace+".getMemberList");
+	}
+
+	public MemberDTO idcheck(MemberDTO memberDTO) {  //id찾기
+		System.out.println("아이디찾기 dao");
+		return sqlSession.selectOne(namespace+".idcheck", memberDTO);
 	}
 	
 }

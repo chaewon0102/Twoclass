@@ -1,6 +1,7 @@
 package com.itwillbs.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -26,10 +27,10 @@ public class AjaxController {
 		
 		String mem_id=request.getParameter("mem_id");
 		
-		MemberDTO memberDTO=memberService.getMember(mem_id);
+		Map<String, String> getMap =memberService.getMember(mem_id);
 		  
 		String result="";
-		if(memberDTO != null) {
+		if(getMap != null) {
 			//아이디 있음 => 아이디 중복
 			result = "iddup";
 		}else {
@@ -41,6 +42,7 @@ public class AjaxController {
 				new ResponseEntity<String>(result,HttpStatus.OK);
 		return entity;
 	}//idCheck()
+	
 	
 //	http://localhost:8080/myweb/member/jsonlist
 	@RequestMapping(value = "/member/jsonlist", method = RequestMethod.GET)
