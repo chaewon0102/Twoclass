@@ -29,9 +29,9 @@ public class ClassController {
 		return "onedayClassMain/classContent";
 	}//
 	
-	@RequestMapping(value = "/onedayClassMain/createClass", method = RequestMethod.GET)
+	@RequestMapping(value = "/onedayClassMain/admin/classCreate", method = RequestMethod.GET)
 	public String createClass() {
 	
-		return "onedayClassMain/createClass";
+		return "/onedayClassMain/admin/classCreate";
 	}//
 }
