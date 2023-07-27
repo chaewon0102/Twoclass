@@ -10391,3 +10391,19 @@ nav[aria-label="breadcrumb"] li:before {
 	text-align: center;
 	border-radius: 50%;
 }
+
+
+
+
+
+
+<!-- 내가 추가한거 -->
+.tab-content .tab-pane h6 {
+	color: #666666;
+	font-weight: 600;
+	margin-bottom: 24px;
+}
+
+.tab-content .tab-pane p:last-child {
+	margin-bottom: 0;
+}

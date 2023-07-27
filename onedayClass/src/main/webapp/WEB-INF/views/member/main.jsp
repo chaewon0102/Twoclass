@@ -32,7 +32,8 @@ ${sessionScope.mem_id }님 로그인 하셨습니다.
 <a href="${pageContext.request.contextPath }/member/info">회원정보조회</a><br>
 <a href="${pageContext.request.contextPath }/member/update">회원정보수정</a><br>
 <a href="${pageContext.request.contextPath }/member/delete">회원정보삭제</a><br>
-
+<a href="${pageContext.request.contextPath }/onedayClassMain/classContent">클래스 content</a><br>
+<a href="${pageContext.request.contextPath }/onedayClassMain/createClass">클래스 등록</a><br>
 <%
 //회원목록은 관리자만 볼수 있게 설정
 // 관리자id  admin 약속
