@@ -55,7 +55,7 @@
         <div class="row justify-content-center align-items-center">
           <div class="col-lg-9 text-center mt-5">
             <h1 class="heading" data-aos="fade-up">
-             비누클래스
+             ${dto.class_title}
             </h1>
 
             <nav

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.itwillbs.mappers.classMapper">
+
+<select id="getMaxNum" resultType="java.lang.Integer"> <!-- select 구문에는 무조건 resultType 있어야함.  -->
+  select max(class_num) from class
+  </select>
+
+
+
+<select id="getClassList" resultType="com.itwillbs.domain.ClassDTO">
+ 	select * from class order by class_num desc limit #{startRow},#{pageSize}
+ </select>
+ 
+ 
+ 
+ <select id="getBoardCount" resultType="java.lang.Integer"> <!-- select 구문에는 무조건 resultType 있어야함.  -->
+  select count(*) from class
+  </select>
+ <!-- 
+  <select id="getClassList" resultType="map" parameterType="map">
+    select * from class
+    where class_num = #{class_num}
+  </select> 
+ -->
+  
+<!--    <select id="getMember"  parameterType="map" -->
+<!--                   resultType="map"> -->
+<!--     select * from members  -->
+<!--     where mem_id = #{mem_id} -->
+<!--   </select>  -->
+  
+<!--   <select id="getMemberList"  -->
+<!--                   resultType="map" parameterType="map"> -->
+<!--     select * from members  -->
+<!--   </select>  -->
+  
+ 
+  
+ <!--   com.itwillbs.mappers.memberMapper.insertMember --> 
+ <!--   => sql이름 호출해서 사용   -->
+<!--        => ? 자리 MemberDTO 멤버변수 #{이름}-->
+<!--   <insert id="insertMember" parameterType="map"> -->
+<!--   	insert into members(mem_id ,mem_pass ,mem_name ,mem_phone ,mem_gender ,mem_confirm -->
+<!--   						,mem_file ,mem_addroad ,mem_addjibun ,mem_addcode ,mem_add, mem_indate,mem_type)  -->
+  						
+<!--   	values(#{mem_id},#{mem_pass},#{mem_name},#{mem_phone}, -->
+<!--   			#{mem_gender},#{mem_confirm},#{mem_file},#{mem_addroad},#{mem_addjibun}, -->
+<!--   			#{mem_addcode},#{mem_add},(SELECT DATE_FORMAT(NOW(), '%Y%m%d')),#{mem_type}) -->
+<!--   </insert> -->
+  
+<!--   <update id="updateMember" parameterType="map"> -->
+<!--   	update members  -->
+<!--   	set name = #{name}  -->
+<!--   	where id = #{id} -->
+<!--   </update> -->
+  
+<!--   <delete id="deleteMember" parameterType="map"> -->
+<!--   	delete from members  -->
+<!--   	where id = #{id} -->
+<!--   </delete> -->
+  
+</mapper>
