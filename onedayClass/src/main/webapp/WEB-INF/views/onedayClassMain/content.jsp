@@ -8,8 +8,14 @@
 <head>
 <meta charset="UTF-8">
 <title>center/content.jsp</title>
-<link href="css/default.css" rel="stylesheet" type="text/css">
-<link href="css/subpage.css" rel="stylesheet" type="text/css">
+<script type="text/javascript"
+ src="${pageContext.request.contextPath }/resources/script/jquery-3.7.0.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/fonts/icomoon/style.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/fonts/flaticon/font/flaticon.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/tiny-slider.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/aos.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/style.css" />
+    
 <!--[if lt IE 9]>
 <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" type="text/javascript"></script>
 <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/ie7-squish.js" type="text/javascript"></script>
@@ -37,14 +43,7 @@
 <!-- 메인이미지 -->
 
 <!-- 왼쪽메뉴 -->
-<nav id="sub_menu">
-<ul>
-<li><a href="list.bo">게시판</a></li>
-<li><a href="flist.bo">자료실</a></li>
-<li><a href="glist.bo">갤러리</a></li>
-<li><a href="#">Service Policy</a></li>
-</ul>
-</nav>
+
 <!-- 왼쪽메뉴 -->
 
 <!-- 게시판 -->
@@ -80,18 +79,6 @@ request.setAttribute("dto", dto);
 
 
 
-<input type="button" value="글수정" class="btn" 
- onclick="location.href='update.bo?num=${dto.class_num}'"> 
- <input type="button" value="글삭제" class="btn" 
- onclick="location.href='delete.bo?num=${dto.class_num}'"> 
- 
- 
- <%
- 
- 
- %>
-<input type="button" value="글목록" class="btn" 
- onclick="location.href='${pageContext.request.contextPath }/onedayClassMain/classContent'"> 
 </div>	
 
 <div class="clear"></div>
@@ -104,5 +91,15 @@ request.setAttribute("dto", dto);
 <jsp:include page="../inc/bottom.jsp"></jsp:include>
 <!-- 푸터들어가는 곳 -->
 </div>
+
+
+
+ <script src="${pageContext.request.contextPath }/resources/js/bootstrap.bundle.min.js"></script>
+    <script src="${pageContext.request.contextPath }/resources/js/tiny-slider.js"></script>
+    <script src="${pageContext.request.contextPath }/resources/js/aos.js"></script>
+    <script src="${pageContext.request.contextPath }/resources/js/navbar.js"></script>
+    <script src="${pageContext.request.contextPath }/resources/js/counter.js"></script>
+    <script src="${pageContext.request.contextPath }/resources/js/custom.js"></script>
+    
 </body>
 </html>

@@ -44,9 +44,11 @@
   </head>
   <body>
        <!-- header -->
-       <%@include file="../inc/top.jsp" %>
-    <%-- <jsp:include page="../inc/top.jsp"></jsp:include> --%>
+    
+<jsp:include page="../inc/top.jsp"></jsp:include>
 
+ClassDTO dto = new ClassDTO();
+request.setAttribute("dto", dto);
     <div
       class="hero page-inner overlay"
       style="background-image: url('images/hero_bg_3.jpg')"
@@ -97,7 +99,7 @@
             </div>
           </div>
           <div class="col-lg-4">
-            <h2 class="heading text-primary">비누클래스</h2>
+            <h2 class="heading text-primary">${dto.class_title}</h2>
             <p class="meta">California, United States</p>
             <p class="text-black-50">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione
@@ -242,8 +244,9 @@
     </div>
 
        <!-- footer -->
-         <%@include file="../inc/top.jsp" %>
 <%--     <jsp:include page="../inc/bottom.jsp"></jsp:include> --%>
+
+<jsp:include page="../inc/bottom.jsp"></jsp:include>
     <!-- /.site-footer -->
 
     <!-- Preloader -->
